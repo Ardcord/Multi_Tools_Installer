@@ -2,6 +2,30 @@
 
 USER_NAME=$(logname)
 
+# 1. Update the system
+echo "Mise à jour du système"
+apt update -y
+apt upgrade -y
+
+# 2. Install dependencies
+echo "Installation des dépendances"
+sudo apt install -y software-properties-common apt-transport-https wget curl git
+
+sudo apt install -y xdg-utils \
+                    gnome-keyring \
+                    libsecret-tools \
+                    terminator \
+                    gnome-shell-extensions \
+                    vmware-manager \
+                    audacity \
+                    gimp \
+                    neofetch \
+                    linux-headers-$(uname -r)
+
+
+
+
+
 # Install all AppImages
 
 echo "Installing AppImages"
